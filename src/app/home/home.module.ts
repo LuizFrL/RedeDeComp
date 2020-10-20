@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import {CardModule} from '../card/card.module';
 import { HeaderComponent } from './header/header.component';
 import {RouterModule} from '@angular/router';
-import { CardComponent } from './card/card.component';
+import { CardsUserComponent } from './cards-user/cards-user.component';
 
 
 
 @NgModule({
-  declarations: [ HeaderComponent, CardComponent ],
+  declarations: [ HeaderComponent, CardsUserComponent ],
   exports: [ HeaderComponent ],
   imports: [
     CommonModule,

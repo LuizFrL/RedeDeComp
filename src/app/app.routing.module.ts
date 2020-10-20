@@ -5,16 +5,18 @@ import {LoginComponent} from './home/login/login.component';
 import {NotFoundComponent} from './errors/not-found/not-found.component';
 import {CardInformationsComponent} from './card/card-informations/card-informations.component';
 import {UserGuard} from './core/user-guard/user.guard';
+import {CardsUserComponent} from './home/cards-user/cards-user.component';
+
 
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'cards',
-    component: CardInformationsComponent,
+    component: CardsUserComponent,
     canActivate: [ UserGuard ]
   },
   {

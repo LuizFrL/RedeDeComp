@@ -2,7 +2,10 @@
   <nav class="navbar navbar-light bg-white">
     <a class="navbar-brand">Trabalho de Rede de Computadores</a>
     <div *ngIf="(user$ | async) as user; else login">
-      <p class="ml-1">{{ user.displayName }}</p>
+      <a class="navbar-brand">
+        <img src="{{ user.photoURL }}" class="rounded mt-2 figure-img" width="30" height="30" alt="">
+      </a>
+      <a class="mr-1">{{ user.displayName }}</a>
       <button class="ml-2 btn btn-primary" type="button" (click)="logOut()">LogOut</button>
     </div>
     <ng-template #login>
