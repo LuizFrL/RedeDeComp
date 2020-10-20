@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {UserService} from '../../core/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
+  loginWithGoogle(): void {
+    this.userService.loginWithGoogle();
+  }
 }

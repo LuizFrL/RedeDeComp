@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "rededecomp-b30fd": {
+      "hosting": {
+        "RedeDeComp": [
+          "rededecomp-b30fd"
+        ]
+      }
+    }
+  }
+}
