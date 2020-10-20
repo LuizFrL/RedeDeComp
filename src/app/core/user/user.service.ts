@@ -10,6 +10,7 @@ import * as firebase from 'firebase';
 })
 export class UserService {
   user$ = new BehaviorSubject(null);
+  private hasUser: boolean;
   constructor(
     private fireAuth: AngularFireAuth,
     private router: Router
@@ -39,5 +40,10 @@ export class UserService {
 
   private updateUserStatus(user: firebase.User | null): void {
     this.user$.next(user);
+  }
+
+  isLogged(): boolean {
+    this.user$.subscribe(user => this.hasUser = !!user);
+    return !!this.hasUser;
   }
 }
