@@ -1,4 +1,4 @@
-export interface Card {
+export class Card {
   title: string;
   description: string;
 }

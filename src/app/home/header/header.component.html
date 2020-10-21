@@ -7,6 +7,7 @@
       </a>
       <a class="mr-1">{{ user.displayName }}</a>
       <button class="ml-2 btn btn-primary" type="button" (click)="logOut()">LogOut</button>
+      <button class="ml-2 btn btn-success" type="button" (click)="getUrl(user.uid)">Get Url</button>
     </div>
     <ng-template #login>
       <span class="navbar-text" [routerLink]="['']" >

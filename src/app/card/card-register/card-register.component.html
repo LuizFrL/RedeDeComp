@@ -4,7 +4,7 @@
       <div class="form-group">
         <label for="TitleInput" class="mt-1"><b>Title</b></label>
         <input type="text" formControlName="cardTitle" #cardTitleInput class="form-control" id="TitleInput"
-               placeholder="Enter title">
+               placeholder="Enter title" [(ngModel)]="card.title">
         <app-form-error
           *ngIf="cardForm.get('cardTitle').errors?.required"
           text="Title is required!"
@@ -13,12 +13,14 @@
       <div class="form-group text-center">
         <label for="Description"><b>Description</b></label>
         <textarea class="form-control" formControlName="cardDescription" #cardDescriptionInput id="Description" rows="5"
-                  placeholder="Enter Description"></textarea>
+                  placeholder="Enter Description" [(ngModel)]="card.description"></textarea>
         <app-form-error
           *ngIf="cardForm.get('cardDescription').errors?.required"
           text="You need to describe it!"></app-form-error>
       </div>
-      <button (click)="createCard()" type="button" class="btn btn-primary mb-2" [disabled]="cardForm.invalid">Add Card</button>
+      <button (click)="createCard()" type="button" class="btn btn-primary mb-2" [disabled]="cardForm.invalid">Save
+        Card
+      </button>
     </form>
   </div>
 </div>

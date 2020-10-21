@@ -22,4 +22,8 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.userService.logOut();
   }
+
+  getUrl(uid: string): void {
+    console.log(uid);
+  }
 }

@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FireDatabaseService } from './fire-database.service';
+import { CardDatabaseService } from './card-database.service';
 
 describe('FireDatabaseService', () => {
-  let service: FireDatabaseService;
+  let service: CardDatabaseService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FireDatabaseService);
+    service = TestBed.inject(CardDatabaseService);
   });
 
   it('should be created', () => {

@@ -1,1 +1,14 @@
-<app-card-register></app-card-register>
+<div class="ml-4">
+  <app-card-register></app-card-register>
+</div>
+<div class="">
+  <ol class="list-unstyled">
+    <li class="row" *ngFor="let cards of rowCards">
+      <div class="col-2 mt-3 ml-1" *ngFor="let card of cards">
+        <app-card-informations [title]="card.title" [description]="card.description"></app-card-informations>
+        <button type="button" class="btn btn-outline-danger mt-2" (click)="delete(card.key)">X</button>
+        <button type="button" class="btn btn-outline-secondary ml-2 mt-2" (click)="edit( card, card.key)">Edit</button>
+      </div>
+    </li>
+  </ol>
+</div>

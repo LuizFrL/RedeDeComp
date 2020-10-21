@@ -5,7 +5,7 @@ import {Card} from './card';
 @Injectable({
   providedIn: 'root'
 })
-export class FireDatabaseDatashareService {
+export class CardDatabaseShareService {
   private cardSource = new BehaviorSubject({card: null, key: ''});
   currentCard = this.cardSource.asObservable();
 
