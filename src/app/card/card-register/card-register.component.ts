@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CardDatabaseService} from '../../core/card-database/card-database.service';
 import {CardDatabaseShareService} from '../../core/card-database-share/card-database-share.service';
 import { Card } from '../../core/card-database-share/card';
-import {Observable} from 'rxjs';
 
 
 @Component({
@@ -41,10 +40,14 @@ export class CardRegisterComponent implements OnInit{
   createCard(): void {
     if (this.key){
       this.cardService.update(this.card, this.key);
+      this.key = '';
     } else {
       this.cardService.insert(this.card);
     }
     this.card = new Card();
   }
 
+  cancelEdit(): void {
+    this.key = '';
+  }
 }

@@ -21,6 +21,8 @@
       <button (click)="createCard()" type="button" class="btn btn-primary mb-2" [disabled]="cardForm.invalid">Save
         Card
       </button>
+      <button *ngIf=" key " (click)="cancelEdit()" type="button" class="btn btn-danger mb-2 ml-1" [disabled]="cardForm.invalid">Cancel
+      </button>
     </form>
   </div>
 </div>
