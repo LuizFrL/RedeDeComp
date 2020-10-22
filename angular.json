@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "RedeDeComp"
+  "defaultProject": "RedeDeComp",
+  "cli": {
+    "analytics": false
+  }
 }
