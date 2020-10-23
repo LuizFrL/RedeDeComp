@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "rededecomputadores",
+    "site": "rededecomp-b30fd",
     "public": "dist/RedeDeComp",
     "ignore": [
       "firebase.json",
