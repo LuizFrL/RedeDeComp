@@ -9,8 +9,8 @@ import * as firebase from 'firebase';
   providedIn: 'root'
 })
 export class UserService {
+  private KEY = 'uid';
   user$ = new BehaviorSubject(null);
-  private hasUser: boolean;
   constructor(
     private fireAuth: AngularFireAuth,
     private router: Router
@@ -25,12 +25,13 @@ export class UserService {
   async loginWithGoogle(): Promise<void> {
     const credentials = await this.fireAuth.signInWithPopup(new auth.GoogleAuthProvider());
     this.user$.next(credentials.user);
-    await this.router.navigate(['cards']);
+    localStorage.setItem(this.KEY, credentials.user.uid);
   }
 
   async logOut() {
     await this.fireAuth.signOut();
     this.updateUserStatus(null);
+    localStorage.removeItem(this.KEY);
     return this.router.navigate(['']);
   }
 
@@ -43,7 +44,6 @@ export class UserService {
   }
 
   isLogged(): boolean {
-    this.user$.subscribe(user => this.hasUser = !!user);
-    return !!this.hasUser;
+    return !!localStorage.getItem(this.KEY);
   }
 }

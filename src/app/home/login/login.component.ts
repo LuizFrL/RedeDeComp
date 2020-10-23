@@ -15,14 +15,14 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe(user => {
-      if (user) {
-        this.route.navigate(['cards']);
-      }
-    });
   }
 
   loginWithGoogle(): void {
     this.userService.loginWithGoogle();
+    this.userService.getUser().subscribe( user => {
+      if (user){
+        this.route.navigate(['cards']);
+      }
+    });
   }
 }

@@ -6,6 +6,7 @@ import {NotFoundComponent} from './errors/not-found/not-found.component';
 import {CardInformationsComponent} from './card/card-informations/card-informations.component';
 import {UserGuard} from './core/user-guard/user.guard';
 import {CardsUserComponent} from './home/cards-user/cards-user.component';
+import {LogindGuard} from './core/login-guard/login-guard.guard';
 
 
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: LoginComponent,
+    canActivate: [ LogindGuard ]
   },
   {
     path: 'cards',
