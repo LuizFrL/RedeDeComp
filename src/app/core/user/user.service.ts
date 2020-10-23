@@ -46,4 +46,8 @@ export class UserService {
   isLogged(): boolean {
     return !!localStorage.getItem(this.KEY);
   }
+
+  getUserUid(): string {
+    return localStorage.getItem(this.KEY);
+  }
 }

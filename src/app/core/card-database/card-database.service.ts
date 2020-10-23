@@ -14,7 +14,7 @@ export class CardDatabaseService {
     private userService: UserService
   ) {
     userService.getUser().subscribe( user => {
-      this.userUID = user.uid;
+        this.userUID = userService.getUserUid();
     });
   }
 
