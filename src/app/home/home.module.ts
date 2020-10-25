@@ -11,7 +11,7 @@ import {LoginComponent} from './login/login.component';
 
 @NgModule({
   declarations: [ HeaderComponent, CardsUserComponent, ProjectDescriptionComponent, LoginComponent ],
-  exports: [ HeaderComponent ],
+  exports: [ HeaderComponent, ProjectDescriptionComponent ],
   imports: [
     CommonModule,
     CardModule,

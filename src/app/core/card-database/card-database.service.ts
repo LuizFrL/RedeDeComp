@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Card} from '../card-database-share/card';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {UserService} from '../user/user.service';
@@ -8,6 +8,7 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CardDatabaseService {
+
   private userUID: string;
   constructor(
     private db: AngularFireDatabase,
