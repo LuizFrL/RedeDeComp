@@ -1,6 +1,7 @@
-<div class="card border-primary rounded text-justify" style="width: 18rem;">
+<div class="card border rounded text-justify" style="width: 18rem;">
+  <div class="card-header"><h4>{{ title }}</h4></div>
   <div class="card-body">
-    <h5 class="card-title">{{ title }}</h5>
-    <p class="card-block">{{ description }}</p>
+    <p class="card-title">{{ description }}</p>
   </div>
+  <ng-content></ng-content>
 </div>
