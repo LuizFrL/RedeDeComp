@@ -10,8 +10,7 @@ import {Card} from '../../core/card-database-share/card';
   styleUrls: ['./cards-user.component.css']
 })
 export class CardsUserComponent implements OnInit {
-  private cards$: Observable<any>;
-  rowCards = [];
+  cards$: Observable<any>;
   constructor(
     private cardService: CardDatabaseService,
     private cardServiceShare: CardDatabaseShareService,
@@ -19,9 +18,6 @@ export class CardsUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.cards$ = this.cardService.getAll();
-    this.cards$.subscribe( cards => {
-      this.rowCards = this.cardService.groupColumns(cards, 4);
-    });
 
   }
   delete(key: string){

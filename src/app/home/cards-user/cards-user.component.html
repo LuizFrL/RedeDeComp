@@ -1,10 +1,15 @@
-<div class="ml-4">
-  <app-card-register></app-card-register>
+<div class="container">
+  <div class="row">
+    <div class="text-center m-0 col-12">
+      <app-card-register></app-card-register>
+      <hr>
+    </div>
+  </div>
 </div>
-<div class="">
+<div class="container-fluid">
   <ol class="list-unstyled">
-    <li class="row" *ngFor="let cards of rowCards">
-      <div class="col-2 mt-3 ml-1" *ngFor="let card of cards">
+    <li class="row">
+      <div class="col-12 col-sm-6 col-md mb-5" *ngFor="let card of cards$ | async">
         <app-card-informations [title]="card.title" [description]="card.description">
           <div class="card-footer">
             <button type="button" class="btn btn-outline-danger" (click)="delete(card.key)">X</button>
