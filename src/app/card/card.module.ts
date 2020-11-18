@@ -4,15 +4,19 @@ import {CardInformationsComponent} from './card-informations/card-informations.c
 import {CardRegisterComponent} from './card-register/card-register.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ErrorsModule} from '../errors/errors.module';
+import {CardRoutingModule} from './card.routing.module';
+import {CardsShareableComponent} from './cards-shareable/cards-shareable.component';
+import {CardsUserComponent} from './cards-user/cards-user.component';
 
 
 @NgModule({
-  declarations: [ CardInformationsComponent, CardRegisterComponent ],
+  declarations: [ CardInformationsComponent, CardRegisterComponent, CardsShareableComponent, CardsUserComponent ],
   exports: [ CardInformationsComponent, CardRegisterComponent ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    ErrorsModule
+    ErrorsModule,
+    CardRoutingModule
   ]
 })
 export class CardModule {

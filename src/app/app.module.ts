@@ -7,7 +7,6 @@ import { ErrorsModule } from './errors/errors.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import {CardModule} from './card/card.module';
 import {HomeModule} from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -22,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ErrorsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    CardModule,
     HomeModule,
     BrowserAnimationsModule
   ],
