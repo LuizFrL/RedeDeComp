@@ -3,6 +3,7 @@ import {Card} from '../card-database-share/card';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {UserService} from '../user/user.service';
 import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,24 @@ export class CardDatabaseService {
   }
   delete(key: string): void {
     this.db.object(`${this.userUID}/card/${key}`).remove();
+  }
+
+  getCardsByUID(uid: string): Observable<any>{
+    return this.db.list(uid + '/card')
+      .snapshotChanges().pipe(
+        map(changes => {
+          // @ts-ignore
+          return changes.map( c => ({key: c.payload.key, ...c.payload.val() }));
+        })
+      );
+  }
+
+  groupColumns(cards: any[], rows): any[]{
+    const newRows = [];
+    for (let index = 0; index < cards.length; index += rows){
+      newRows.push(cards.slice(index, index + rows));
+    }
+    return newRows;
   }
 
 }

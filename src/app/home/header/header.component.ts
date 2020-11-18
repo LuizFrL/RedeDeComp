@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {UserService} from '../../core/user/user.service';
 import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
+import {Clipboard} from '@angular/cdk/clipboard';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +12,13 @@ import {Observable} from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   user$: Observable<any>;
+  textCopy = 'Copiar para área de transferência';
+  @ViewChild('tooltip') manualTooltip: MatTooltip;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router,
+    private clipboard: Clipboard
   ) {
     this.user$ = this.userService.getUser();
   }
@@ -19,11 +26,18 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logOut() {
+  logOut(): void {
     this.userService.logOut();
   }
 
-  getUrl(uid: string): void {
-    console.log(uid);
+  copyUrlToClipboard(uid: string): void {
+    this.clipboard.copy(window.location.origin + this.router.url + '/' + uid);
+    this.textCopy = 'Url copiada com sucesso!';
+    this.manualTooltip.show();
+  }
+
+  leaveTooltip(): void {
+    this.manualTooltip.hide();
+    this.textCopy = 'Copiar para área de transferência';
   }
 }

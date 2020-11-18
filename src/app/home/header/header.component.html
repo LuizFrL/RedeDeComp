@@ -5,9 +5,18 @@
       <a class="navbar-brand">
         <img src="{{ user.photoURL }}" class="rounded mt-2 figure-img" width="30" height="30" alt="">
       </a>
-      <a class="mr-1">{{ user.displayName }}</a>
-      <button class="ml-2 btn btn-primary" type="button" (click)="logOut()">LogOut</button>
-      <button class="ml-2 btn btn-success" type="button" (click)="getUrl(user.uid)">Get Url</button>
+      <a class="mr-1" [routerLink]="['']">{{ user.displayName }}</a>
+      <button class="ml-2"
+              mat-stroked-button
+              (click)="logOut()">LogOut</button>
+      <button class="ml-2"
+              mat-stroked-button
+              color="accent"
+              [matTooltip]="textCopy"
+              #tooltip="matTooltip"
+              (click)="copyUrlToClipboard(user.uid)"
+              (mouseleave)="leaveTooltip()"
+      >Get Url</button>
     </div>
     <ng-template #login>
       <span class="navbar-text" [routerLink]="['']" >
@@ -16,3 +25,8 @@
     </ng-template>
   </nav>
 </header>
+<script>
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>

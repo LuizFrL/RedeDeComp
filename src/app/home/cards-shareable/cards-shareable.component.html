@@ -1,0 +1,9 @@
+<ol class="list-unstyled list-group-flush ">
+  <li class="row list-group list-group-item" *ngFor="let cards of rowCards">
+    <div class="col-2 mt-3 ml-1" *ngFor="let card of cards">
+      <app-card-informations [title]="card.title" [description]="card.description">
+      </app-card-informations>
+    </div>
+  </li>
+</ol>
+

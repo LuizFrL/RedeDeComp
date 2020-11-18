@@ -20,7 +20,7 @@ export class CardsUserComponent implements OnInit {
   ngOnInit(): void {
     this.cards$ = this.cardService.getAll();
     this.cards$.subscribe( cards => {
-      this.rowCards = this.groupColumns(cards);
+      this.rowCards = this.cardService.groupColumns(cards, 4);
     });
 
   }
@@ -32,11 +32,4 @@ export class CardsUserComponent implements OnInit {
     this.cardServiceShare.changeCard(card, key);
   }
 
-  private groupColumns(cards: any[]): any[]{
-    const newRows = [];
-    for (let index = 0; index < cards.length; index += 4){
-      newRows.push(cards.slice(index, index + 4));
-    }
-    return newRows;
-  }
 }
