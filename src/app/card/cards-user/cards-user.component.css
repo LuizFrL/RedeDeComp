@@ -1,0 +1,8 @@
+@media (max-width: 589px) {
+  @media (min-width: 481px) {
+    .flex {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

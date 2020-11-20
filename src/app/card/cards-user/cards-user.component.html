@@ -7,9 +7,9 @@
   </div>
 </div>
 <div class="container-fluid">
-  <ol class="list-unstyled">
+  <ol class="list-unstyled text-center">
     <li class="row">
-      <div class="col-12 col-sm-6 col-md mb-5" *ngFor="let card of cards$ | async">
+      <div class="col-12 col-sm-6 col-md mb-5 flex" *ngFor="let card of cards$ | async">
         <app-card-informations [title]="card.title" [description]="card.description">
           <div class="card-footer">
             <button type="button" class="btn btn-outline-danger" (click)="delete(card.key)">X</button>
