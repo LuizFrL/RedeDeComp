@@ -25,6 +25,7 @@ export class CardsUserComponent implements OnInit {
   }
 
   edit(card: Card, key: string): void {
+    window.scrollTo(0, 0);
     this.cardServiceShare.changeCard(card, key);
   }
 

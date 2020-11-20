@@ -3,7 +3,7 @@
     <form [formGroup]="cardForm" class="text-center ml-4 mr-4">
       <div class="form-group">
         <label for="TitleInput" class="mt-1"><b>Title</b></label>
-        <input type="text" formControlName="cardTitle" class="form-control" id="TitleInput"
+        <input type="text" formControlName="cardTitle" #cardTitle class="form-control" id="TitleInput"
                placeholder="Enter title" [(ngModel)]="card.title">
         <app-form-error
           *ngIf="cardForm.get('cardTitle').errors?.required"

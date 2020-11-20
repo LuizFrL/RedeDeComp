@@ -1,8 +1,10 @@
-<ol class="list-unstyled list-group-flush">
-  <li class="row">
-    <div class="col-12 col-sm-6 col-md mb-5" *ngFor="let card of cards$ | async">
-      <app-card-informations [title]="card.title" [description]="card.description">
-      </app-card-informations>
-    </div>
-  </li>
-</ol>
+<div class="container-fluid">
+  <ol class="list-unstyled list-group-flush">
+    <li class="row">
+      <div class="col-12 col-sm-6 col-md mb-5 flex" *ngFor="let card of cards$ | async">
+        <app-card-informations [title]="card.title" [description]="card.description">
+        </app-card-informations>
+      </div>
+    </li>
+  </ol>
+</div>
