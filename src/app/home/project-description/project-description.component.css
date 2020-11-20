@@ -1,32 +1,11 @@
-.fundo,.subnfc,.subex {
+.fundo {
     background-color: #eeeeee;
 }
-.titulo {
-    padding-top: 20px;
-    text-align: center;
+.negrito {
+  font-weight: bolder;
+  color: black;
 }
-.cont {
-    text-align: center;
-    padding-right: 20%;
-    padding-left: 20%;
-}
-.subt {
-    padding-top: 20px;
-    text-align: center;
-}
-.subnfc {
-    width: 50%;
-    text-align: center;
-    padding-left: 90px;
-    padding-right: 90px;
-    float: left;
-    position: relative;
-}
-.subex {
-    width: 50%;
-    text-align: center;
-    padding-left: 90px;
-    padding-right: 90px;
-    float: left;
-    position: relative;
+
+p {
+  word-break: break-all;
 }
