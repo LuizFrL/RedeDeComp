@@ -7,6 +7,7 @@ import {ErrorsModule} from '../errors/errors.module';
 import {CardRoutingModule} from './card.routing.module';
 import {CardsShareableComponent} from './cards-shareable/cards-shareable.component';
 import {CardsUserComponent} from './cards-user/cards-user.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {CardsUserComponent} from './cards-user/cards-user.component';
     CommonModule,
     ReactiveFormsModule,
     ErrorsModule,
-    CardRoutingModule
+    CardRoutingModule,
+    MatButtonModule
   ]
 })
 export class CardModule {

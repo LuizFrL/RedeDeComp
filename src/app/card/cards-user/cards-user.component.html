@@ -12,8 +12,8 @@
       <div class="col-12 col-sm-6 col-md mb-5 flex" *ngFor="let card of cards$ | async">
         <app-card-informations [title]="card.title" [description]="card.description">
           <div class="card-footer">
-            <button type="button" class="btn btn-outline-danger" (click)="delete(card.key)">X</button>
-            <button type="button" class="btn btn-outline-secondary ml-2" (click)="edit(card, card.key)">Edit</button>
+            <button mat-stroked-button color="warn" (click)="delete(card.key)">X</button>
+            <button mat-stroked-button color="primary" class="ml-2" (click)="edit(card, card.key)">Edit</button>
           </div>
         </app-card-informations>
       </div>

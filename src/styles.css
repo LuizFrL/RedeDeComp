@@ -19,6 +19,6 @@ html {
   scroll-behavior: smooth;
 }
 
-:focus {
+* :focus {
   outline:0 !important;
 }
