@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "rededecomputadores",
+    "site": "nfc-saude",
     "public": "dist/RedeDeComp",
     "rewrites": [
       {
